@@ -1,0 +1,127 @@
+%%%% HEADER
+\newcommand{\Name}[1]
+{
+    \centering{\LARGE{#1}}
+}
+\newcommand{\ResumeHeader}[5]
+{
+ 
+
+    \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+    \newcolumntype{Z}{>{\raggedleft\arraybackslash}X}
+    \newcolumntype{C}{>{\center\arraybackslash}X}
+% 1 Name
+% 2 Phone
+% 3 Email
+% 4 Street address
+% 5 City line
+    \begin{tabularx}{\textwidth}{ Y Y  Z }
+       & \Name{#1} &   \\ 
+     #4 &   &  #2 \\  
+     #5 &   &\Link{#3}{mailto:#3}\\
+    \end{tabularx}
+
+
+}
+%%%%% SECTIONS
+
+
+\newcommand{\ResumeSection}[1]
+{
+    \section*{#1}
+}
+
+\newcommand{\LineHighlight}[3]
+{
+    %    \colorbox{blue}{\makebox[\textwidth-2\fboxsep][l]{\bfseries\color{white} TTTT}}
+    \colorbox{#1}{ \makebox[\linewidth]{\color{#2} #3 }}
+}
+
+\newcommand{\BeginEducation}[4]
+{
+    % Inputs:
+    % 1 - University
+    % 2 - Degree Date
+    % 3 - Degree
+    % 4 - Location
+    %\LineHighlight{blue}{white}{#1 #3}
+
+
+    \begin{table}[H]
+       \begin{center}
+       \begin{tabularx}{\textwidth}{X r}
+            {\bf \large #1} & \textit{#4} \\ 
+           \textit{#3} &  \textit{#2}\\ \hline
+       \end{tabularx}
+       \end{center}
+   \end{table}     
+    \begin{itemize}[label=\ding{228}]
+}
+\newcommand{\EducationItem}
+{
+\item
+}
+
+\newcommand{\EndEducation}
+{
+\end{itemize}
+}
+
+\newcommand{\BeginJob}[5]{
+    % Inputs:
+    % 1 Company 
+    % 2 Start Date
+    % 3 End Date
+    % 4 Title
+    % 5 Location
+ %\LineHighlight{blue}{white}{ #1 #4}
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabularx}{\textwidth}{Xr }
+        {\bf \large #1} &  \textit{#5}\\
+        \textit{#4}  &   \textit{#2-#3}\\ \hline
+    \end{tabularx}
+    \end{center}
+\end{table}     
+
+ \begin{itemize}[label=\ding{228}]
+}
+\newcommand{\WorkItem}[1]
+{
+\item{ \bf #1 } 
+}
+
+
+\newcommand{\EndJob}
+{
+ \end{itemize}
+}
+
+
+
+\newcommand{\BeginSkills}[1]
+{
+    \begin{flushleft}
+    {\raggedleft\bf\large #1}
+    \begin{commalist}
+}
+
+\newcommand{\Skill}[1]
+{
+    \item{#1}
+}
+
+\newcommand{\EndSkills}
+{
+    \end{commalist} 
+
+\end{flushleft}
+    
+    
+}
+
+\newcommand{\Link}[2]
+{
+    {\href{#2}{#1} }
+}

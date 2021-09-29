@@ -1,0 +1,35 @@
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage[centering,includeheadfoot,margin=2cm]{geometry}
+\usepackage{calc,blindtext}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{pifont}
+
+
+
+\usepackage{xcolor,lipsum}
+\usepackage{titlesec}
+
+\titleformat{name=\section}[block]
+  {\sffamily\large}
+  {}
+  {0pt}
+  {\colorsection}
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+
+\newcommand{\colorsection}[1]{%
+  \colorbox{gray!20}{\parbox{\dimexpr\textwidth-2\fboxsep}{ \huge #1}}}
+
+
+\newlength{\runindent}
+\setlength{\runindent}{\parindent}
+\newenvironment{commalist}
+{\par\renewcommand\item{\ifvmode\hspace{\runindent}\else\unskip,\egroup\ \fi
+\hbox\bgroup}\raggedright}
+{\egroup\par}
+
+
